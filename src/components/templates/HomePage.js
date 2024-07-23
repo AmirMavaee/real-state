@@ -24,8 +24,8 @@ function HomePage() {
   return (
     <div className={styles.container}>
       <div>
-        <div className={styles.img}>
-          <div className="embla">
+        <div>
+          <div className={`embla ${styles.embla}`}>
             <div className="embla__viewport" ref={emblaRef}>
               <div className={`embla__container ${styles.emblaContainer}`}>
                 <div className={`embla__slide ${styles.item}`}>

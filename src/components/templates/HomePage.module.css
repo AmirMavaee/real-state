@@ -3,6 +3,10 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+.embla{
+    position: relative;
+}
+
 .emblaContainer{
     height: 100%;
 }
@@ -14,24 +18,22 @@
     position: relative;
 }
 
-.prevNext button{
+.prevNext{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 50%;
+    left: 0;
+    transform: translate(-50% , -50%);
+}
+
+.prevNext button{
     padding: 15px;
     background-color: #00B98E;
     border-radius: 50%;
     border: none;
     outline: none;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-.emblaPrev{
-    top: 40%;
-}
-
-.emblaNext{
-    top: 50%;
 }
 
 .content{
@@ -44,11 +46,35 @@
 }
 
 .content h1{
- font-size: 3.65vw;
+ font-size: 38px;
  margin: 0 10px 20px 10px;
  text-align: center;
 }
 
 .content h1 span{
     color: #00B98E ;
+}
+
+@media (max-width : 767px) {
+    .container > div:first-child{
+        display: block;
+    }
+    .prevNext button{
+        left: 10px;
+        transform: translateX(0);
+    }
+
+    .emblaPrev{
+        top: 42%;
+    }
+    
+    .emblaNext{
+        top: 48%;
+    }
+    .content{
+        padding: 3.5rem 0;
+    }
+    .prevNext{
+        transform: translate(10px, -50%);
+    }
 }
