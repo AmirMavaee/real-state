@@ -6,11 +6,11 @@ import styles from "./SearchBarPage.module.css";
 function SearchBarPage() {
   const property = {
     name: "propertyType",
-    values: ["نوع ملک" , "ملک 1", "ملک 2", "ملک 3"],
+    values: ["نوع ملک" , "ملکملک 1", "ملکملکملک 2", "ملکملکملکملک 3"],
   };
   const location = {
     name: "location",
-    values: ["منطقه" , "منطقه 1", "منطقه 2", "منطقه 3"],
+    values: ["منطقه" , "منطقهمنطقه 1", "منطقهمنطقه 2", "منطقهمنطقهمنطقه 3"],
   };
   const [data, setData] = useState({
     keyword: "",
@@ -29,13 +29,12 @@ function SearchBarPage() {
   return (
     <div className={styles.container}>
       <Buttons text="جستجو" bgcolor="#0E2E50" color="#fff"/>
-      <div className={styles.searchInputContainer}>
-        <SearchInput
+      <SearchInput
           name="keyword"
           onchange={changeHandler}
           data={data}
           type="text"
-          placeHolder="عنوان مورد نظر خود را وارد کنید"
+          placeHolder="عنوان مورد نظر"
         />
         <SearchInput
           options={property}
@@ -49,7 +48,6 @@ function SearchBarPage() {
           onchange={changeHandler}
           data={data}
         />
-      </div>
     </div>
   );
 }
