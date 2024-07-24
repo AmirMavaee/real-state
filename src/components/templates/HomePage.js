@@ -8,6 +8,8 @@ import imgcarousel2 from "../../../public/carousel-2.jpg";
 import Buttons from "../modules/Buttons";
 import { Icon } from "@iconify-icon/react";
 import SearchBarPage from "./SearchBarPage";
+import PropertyType from "./PropertyType";
+import LastProperty from "./LastProperty";
 
 function HomePage() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -67,9 +69,9 @@ function HomePage() {
           <Buttons text="تمام آگهی ها" bgcolor="#00B98E" color="#fff" />
         </div>
       </div>
-      <div>
-        <SearchBarPage/>
-      </div>
+      <SearchBarPage />
+      <PropertyType/>
+      <LastProperty/>
     </div>
   );
 }

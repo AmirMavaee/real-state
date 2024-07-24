@@ -40,8 +40,8 @@ function Header() {
         </div>
         <span className={styles.divider}></span>
         <div className={styles.buttonContainer}>
-          <Buttons text="ورود" bgcolor="#00B98E" color="#fff" />
-          <Buttons text="ثبت نام" bgcolor="#fff" color="#000" />
+          <Buttons text="ورود" bgcolor="#00B98E" color="#fff" route="/signin" />
+          <Buttons text="ثبت نام" bgcolor="#fff" color="#000" route="/signup" />
         </div>
         <div className={styles.resMenuButton}>
           <button onClick={showHandler}>

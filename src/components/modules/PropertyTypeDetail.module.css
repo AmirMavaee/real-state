@@ -1,0 +1,30 @@
+.link{
+    background-color: #EFFDF5;
+    display: block;
+    padding: 15px;
+}
+.container{
+    border: 1px dashed #00B98E;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px 0 10px 0;
+}
+
+.image {
+    border: 1px dashed #00B98E;
+    display: inline-flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.text{
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.number{
+    font-weight: 500;
+    color: #00B98E;
+}

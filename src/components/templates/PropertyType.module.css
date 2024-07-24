@@ -1,0 +1,36 @@
+.container{
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.container h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.container p {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.container section{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 20px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+@media (max-width : 991px) {
+    .container section{
+    grid-template-columns: repeat(2 , 1fr);
+
+    }
+}
+
+@media (max-width : 767px) {
+    .container section{
+    grid-template-columns: repeat(1 , 1fr);
+
+    }
+}

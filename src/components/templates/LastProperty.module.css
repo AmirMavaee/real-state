@@ -1,0 +1,18 @@
+.container{
+    padding: 0 25px;
+}
+
+.container h1{
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.container p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.container section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

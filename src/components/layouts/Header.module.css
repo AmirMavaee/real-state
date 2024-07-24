@@ -4,9 +4,9 @@
     background-color: #fff;
     justify-content: space-between;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    position: absolute;
-    width: 90%;
-    top: 40px;
+    position: fixed;
+    max-width: 1320px;
+    top: 0;
     right: 0;
     left: 0;
     margin: 0 auto;
