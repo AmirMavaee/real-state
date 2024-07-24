@@ -17,7 +17,7 @@ function PropertyType() {
       <section>
         {
             PropertyName.map((item , index) => 
-                <PropertyTypeDetail icon={propertyIcon[index]} text={item} number="123" /> 
+                <PropertyTypeDetail key={index} icon={propertyIcon[index]} text={item} number="123" /> 
             )
         }
       </section>
