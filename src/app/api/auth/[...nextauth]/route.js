@@ -15,25 +15,28 @@ export const authOptions = {
           throw new Error("مشکلی در سرور رخ داده است");
         }
 
-        const {email , password} = credentials;
+        const { email, password } = credentials;
 
-        if(!email || !password){
-            throw new Error("لطفا مقادیر صحیح وارد کنید")
+
+        if (!email || !password) {
+          throw new Error("لطفا مقادیر صحیح وارد کنید");
         }
 
-        const user = await User.findOne({email});
+        const user = await User.findOne({ email });
 
-        if(!user){
-            throw new Error("حساب کاربری وجود ندارد لطفا ثبت نام کنید")
+
+        if (!user) {
+          throw new Error("حساب کاربری وجود ندارد لطفا ثبت نام کنید");
         }
 
-        const isvalid = await verifyPassword(password , User.password);
+        const isvalid = await verifyPassword(password, user.password);
 
-        if(!isvalid){
-            throw new Error("ایمیل یا حساب کاربری اشتباه است");
+        if (!isvalid) {
+          throw new Error("ایمیل یا رمز عبور اشتباه است");
         }
 
-        return{email}
+
+        return { email };
       },
     }),
   ],

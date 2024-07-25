@@ -18,7 +18,9 @@
     "next-auth": "^4.24.7",
     "node-fetch": "^3.3.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-loader-spinner": "^6.1.6"
   },
   "devDependencies": {
     "eslint": "^8",
