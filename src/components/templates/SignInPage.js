@@ -9,32 +9,25 @@ import { useRouter } from "next/navigation";
 import Loader from "../modules/Loader";
 
 function SignInPage() {
-  const [info, setInfo] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-  const changeHandler = (e) => {
-    const { name, value } = e.target;
-    setInfo((pervInfo) => ({ ...pervInfo, [name]: value }));
-  };
+  const router = useRouter();
 
   const signinHandler = async (e) => {
     e.preventDefault();
-    const { email, password } = info;
-    setLoading((prevValue) => !prevValue);
+    setLoading(true);
     const res = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
-    setLoading((prevValue) => !prevValue);
-    if (res.error) {
-      toast.error(res.error);
+    setLoading(false);
+    if (!res.error) {
+      router.push("/");
     } else {
-      toast.success("ورود با موفقیت انجام شد");
+      toast.error(res.error);
     }
   };
 
@@ -46,34 +39,29 @@ function SignInPage() {
           <label>ایمیل :</label>
           <input
             type="text"
-            value={info.email}
-            name="email"
-            onChange={changeHandler}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label>رمز عبور :</label>
           <input
             type="password"
-            value={info.password}
-            name="password"
-            onChange={changeHandler}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-
           {loading ? (
-            <Loader />
+           <Loader/>
           ) : (
-            <button
-              className={yekanBakh.className}
-              type="submit"
-              onClick={signinHandler}
-            >
-              ورود
-            </button>
+            <>
+              <button className={yekanBakh.className} type="submit" onClick={signinHandler}>
+                ورود
+              </button>
+            </>
           )}
         </form>
         <p>
           حساب کاربری ندارید ؟<Link href="signup">ثبت نام</Link>
         </p>
-        <Toaster position="top-center" reverseOrder={false} />
+        <Toaster />
       </div>
     </>
   );

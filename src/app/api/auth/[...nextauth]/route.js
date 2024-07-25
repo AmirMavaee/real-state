@@ -11,30 +11,27 @@ export const authOptions = {
       async authorize(credentials) {
         try {
           await connectDB();
-        } catch (err) {
-          throw new Error("مشکلی در سرور رخ داده است");
+        } catch (error) {
+          throw new Error("مشکل در اتصال به سرور");
         }
 
         const { email, password } = credentials;
 
-
         if (!email || !password) {
-          throw new Error("لطفا مقادیر صحیح وارد کنید");
+          throw new Error("مقادیر را به درستی وارد کنید");
         }
 
-        const user = await User.findOne({ email });
+        const existUser = await User.findOne({ email });
 
-
-        if (!user) {
-          throw new Error("حساب کاربری وجود ندارد لطفا ثبت نام کنید");
+        if (!existUser) {
+          throw new Error("حساب کاربری وجود ندارد لطفا گزینه ثبت نام را بزنید");
         }
 
-        const isvalid = await verifyPassword(password, user.password);
+        const isValid = await verifyPassword(password, existUser.password);
 
-        if (!isvalid) {
+        if (!isValid) {
           throw new Error("ایمیل یا رمز عبور اشتباه است");
         }
-
 
         return { email };
       },
