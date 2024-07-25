@@ -32,11 +32,9 @@ function SignInPage() {
     });
     setLoading((prevValue) => !prevValue);
     if (res.error) {
-      
       toast.error(res.error);
     } else {
       toast.success("ورود با موفقیت انجام شد");
-      router.push("/")
     }
   };
 
