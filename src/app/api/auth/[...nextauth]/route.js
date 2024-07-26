@@ -9,13 +9,13 @@ export const authOptions = {
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
+        const { email, password } = credentials;
         try {
           await connectDB();
         } catch (error) {
           throw new Error("مشکل در اتصال به سرور");
         }
 
-        const { email, password } = credentials;
 
         if (!email || !password) {
           throw new Error("مقادیر را به درستی وارد کنید");
