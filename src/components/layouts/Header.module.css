@@ -43,6 +43,19 @@
     margin-left: 15px;
 }
 
+.buttonContainer a{
+    background-color: #00B98E;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.buttonContainer a iconify-icon{
+    color: #fff;
+}
+
 .resMenuButton {
     display: none;
 }

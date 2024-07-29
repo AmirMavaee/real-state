@@ -2,15 +2,22 @@
     background-color: #EFFDF5;
     display: block;
     padding: 15px;
-}
+} 
+
 .container{
     border: 1px dashed #00B98E;
     border-radius: 5px;
     background-color: #fff;
     padding: 20px 0 10px 0;
+    transition: background-color .2s linear ;
+}
+
+.container:hover{
+    background-color: #00B98E;
 }
 
 .image {
+    background-color: #fff;
     border: 1px dashed #00B98E;
     display: inline-flex;
     padding: 15px;
@@ -22,9 +29,17 @@
 .text{
     font-weight: 500;
     margin: 10px 0;
+    transition: color .2s linear ;
+
 }
 
 .number{
     font-weight: 500;
     color: #00B98E;
+    transition: color .2s linear ;
+}
+
+.container:hover .number ,
+.container:hover .text {
+    color: #fff;
 }

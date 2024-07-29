@@ -1,8 +1,7 @@
 import Layouts from "@/components/layouts/Layouts";
+import NextAuthProvider from "@/providers/NextAuthProvider";
 import { yekanBakh } from "@/utils/fonts";
 import "./globals.css";
-
-
 
 export const metadata = {
   title: "Create Next App",
@@ -14,11 +13,11 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body className={yekanBakh.className}>
         <div className="container">
-          <Layouts>
-            {children}
-          </Layouts>
+          <NextAuthProvider>
+            <Layouts>{children}</Layouts>
+          </NextAuthProvider>
         </div>
-      </body> 
+      </body>
     </html>
   );
 }
