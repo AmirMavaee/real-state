@@ -7,8 +7,11 @@ import { authOptions } from '../api/auth/[...nextauth]/route'
 async function dashboard() {
   const session = await getServerSession(authOptions);
   const user = await User.findOne({ email : session.user.email})
+
+  console.log(user);
+
   return (
-    <DashboardPage userData={user}/>
+    <DashboardPage date={user.createdAt} email={user.email}/>
   )
 }
 

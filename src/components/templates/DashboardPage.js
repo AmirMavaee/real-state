@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import styles from "./DashboardPage.module.css";
 
-function DashboardPage({ userData }) {
+function DashboardPage({ date , email }) {
   const [loading, setLoading] = useState(false);
   const [isDisable, setIsDisable] = useState(true);
   const [newPass, setNewPass] = useState({
@@ -20,7 +20,7 @@ function DashboardPage({ userData }) {
           setLoading(true);
           const res = await fetch("api/auth/updatePassword", {
             method: "POST",
-            body: JSON.stringify({ password, userData }),
+            body: JSON.stringify({ password, email }),
             headers: { "Content-Type": "application/json" },
           });
           const data = await res.json();
@@ -83,13 +83,13 @@ function DashboardPage({ userData }) {
         <div>
           <p>تاریخ عضویت : </p>
           <span>
-            {new Date(userData.createdAt).toLocaleDateString("fa-IR")}
+            {new Date(date).toLocaleDateString("fa-IR")}
           </span>
         </div>
         <div>
           <p>تاریخ ثبت آخرین آگهی : </p>
           <span>
-            {new Date(userData.createdAt).toLocaleDateString("fa-IR")}
+            {new Date(date).toLocaleDateString("fa-IR")}
           </span>
         </div>
       </div>
