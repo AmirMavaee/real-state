@@ -1,18 +1,22 @@
 import User from "@/models/User";
 import { hashPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
+import { authOptions } from "../[...nextauth]/route";
 
 export async function POST(req) {
   try {
     await connectDB();
 
-    const { password , email } = await req.json();
+    const session = await getServerSession(authOptions);
+
+    const { password } = await req.json();
     
     const hashPass = await hashPassword(password);
 
     await User.findOneAndUpdate(
-      { email: email },
+      { email: session.user.email },
       { password: hashPass }
     );
 
