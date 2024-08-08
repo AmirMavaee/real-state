@@ -18,7 +18,7 @@ function DashboardPage({ date , email }) {
       if (password === rePassword) {
         if (confirm("آیا رمز عبور تغییر پیدا کند ؟")) {
           setLoading(true);
-          const res = await fetch("api/auth/updatePassword", {
+          const res = await fetch("/api/auth/updatePassword", {
             method: "POST",
             body: JSON.stringify({ password, email }),
             headers: { "Content-Type": "application/json" },
