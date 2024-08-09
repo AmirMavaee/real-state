@@ -3,7 +3,7 @@ import { hashPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
 import { NextResponse } from "next/server";
 
-export async function mongodb(req) {
+export async function POST(req) {
   try {
     await connectDB();
 
