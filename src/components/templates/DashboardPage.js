@@ -13,29 +13,29 @@ function DashboardPage({ date }) {
     rePassword: "",
   });
   const changeHandler = async () => {
-    const { password, rePassword } = newPass;
-    if (!isDisable) {
-      if (password === rePassword) {
-        if (confirm("آیا رمز عبور تغییر پیدا کند ؟")) {
-          setLoading(true);
-          const res = await fetch("/api/auth/updatePassword", {
-            method: "POST",
-            body: JSON.stringify({ password }),
-            headers: { "Content-Type": "application/json" },
-          });
-          const data = await res.json();
-          setLoading(false);
-          setNewPass({
-            password: "",
-            rePassword: "",
-          });
-          toast.success(data.message);
-        }
-      } else {
-        toast.error("رمز عبور با تکرار آن برابر نمی باشد");
-      }
-    }
-    setIsDisable(false);
+    // const { password, rePassword } = newPass;
+    // if (!isDisable) {
+    //   if (password === rePassword) {
+    //     if (confirm("آیا رمز عبور تغییر پیدا کند ؟")) {
+    //       setLoading(true);
+    //       const res = await fetch("/api/auth/updatePassword", {
+    //         method: "POST",
+    //         body: JSON.stringify({ password }),
+    //         headers: { "Content-Type": "application/json" },
+    //       });
+    //       const data = await res.json();
+    //       setLoading(false);
+    //       setNewPass({
+    //         password: "",
+    //         rePassword: "",
+    //       });
+    //       toast.success(data.message);
+    //     }
+    //   } else {
+    //     toast.error("رمز عبور با تکرار آن برابر نمی باشد");
+    //   }
+    // }
+    // setIsDisable(false);
   };
 
   const inputHandler = (e) => {
