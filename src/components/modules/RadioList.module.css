@@ -1,0 +1,27 @@
+.container {
+  margin-bottom: 40px;
+}
+
+.container p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #00B98E18;
+  color: #00B98E;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  width: 100px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}

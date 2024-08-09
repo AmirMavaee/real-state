@@ -104,6 +104,10 @@ ul{
   list-style-type: none;
 }
 
+input , textarea {
+  background-color: transparent;
+}
+
 .container{
   max-width: 1320px;
   margin: 0 auto;

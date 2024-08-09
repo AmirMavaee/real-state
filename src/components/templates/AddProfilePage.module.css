@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 80px;
+    width: 100%;
+    background-color: #00B98E18;
+    color: #00B98E;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.inputContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
+}
+
+.inputContainer > *{
+    margin: 10px;
+}
+
+.submit {
+    border: none;
+    background-color: #00B98E;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all ease-in 0.2s;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.submit:hover {
+    transform: scale(1.01);
+}
+
+@media (max-width : 575px) {
+    .inputContainer{
+        grid-template-columns: repeat(1,1fr) ;
+    }
+
+    .inputContainer > *{
+        margin: 0;
+    }
+}
