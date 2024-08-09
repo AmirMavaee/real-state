@@ -1,7 +1,7 @@
 "use client";
 import { yekanBakh } from "@/utils/fonts";
 import Loader from "../modules/Loader";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import styles from "./DashboardPage.module.css";
 
@@ -44,59 +44,57 @@ function DashboardPage({ date }) {
   };
 
   return (
-    <div className={styles.container}>
-      <div>
-        <h3>سلام 🖐</h3>
-        <p>آگهی خود را ثبت کنید تا هزاران نفر آن را ببینند</p>
-      </div>
-
-      <div>
-        {loading ? (
-          <Loader />
-        ) : (
-          <button className={yekanBakh.className} onClick={changeHandler}>
-            {isDisable ? "تغییر رمز عبور" : "ذخیره"}
-          </button>
-        )}
-
-        <input
-          className={yekanBakh.className}
-          type="password"
-          name="password"
-          value={newPass.password}
-          placeholder="رمز عبور جدید"
-          disabled={isDisable}
-          onChange={inputHandler}
-        />
-        <input
-          className={yekanBakh.className}
-          type="password"
-          name="rePassword"
-          value={newPass.rePassword}
-          placeholder="تکرار رمز عبور جدید"
-          disabled={isDisable}
-          onChange={inputHandler}
-        />
-      </div>
-
-      <div className={styles.createdAt}>
+    <Suspense>
+      <div className={styles.container}>
         <div>
-          <p>تاریخ عضویت : </p>
-          <span>
-            {new Date(date).toLocaleDateString("fa-IR")}
-          </span>
+          <h3>سلام 🖐</h3>
+          <p>آگهی خود را ثبت کنید تا هزاران نفر آن را ببینند</p>
         </div>
+
         <div>
-          <p>تاریخ ثبت آخرین آگهی : </p>
-          <span>
-            {new Date(date).toLocaleDateString("fa-IR")}
-          </span>
+          {loading ? (
+            <Loader />
+          ) : (
+            <button className={yekanBakh.className} onClick={changeHandler}>
+              {isDisable ? "تغییر رمز عبور" : "ذخیره"}
+            </button>
+          )}
+
+          <input
+            className={yekanBakh.className}
+            type="password"
+            name="password"
+            value={newPass.password}
+            placeholder="رمز عبور جدید"
+            disabled={isDisable}
+            onChange={inputHandler}
+          />
+          <input
+            className={yekanBakh.className}
+            type="password"
+            name="rePassword"
+            value={newPass.rePassword}
+            placeholder="تکرار رمز عبور جدید"
+            disabled={isDisable}
+            onChange={inputHandler}
+          />
         </div>
+
+        <div className={styles.createdAt}>
+          <div>
+            <p>تاریخ عضویت : </p>
+            <span>{new Date(date).toLocaleDateString("fa-IR")}</span>
+          </div>
+          <div>
+            <p>تاریخ ثبت آخرین آگهی : </p>
+            <span>{new Date(date).toLocaleDateString("fa-IR")}</span>
+          </div>
+        </div>
+        <span>
+          <Toaster />
+        </span>
       </div>
-      <span>
-        <Toaster />
-      </span>
-    </div>
+    </Suspense>
   );
 }
 
