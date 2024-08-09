@@ -10,8 +10,8 @@ async function dashboard() {
   const session = await getServerSession(authOptions);
   const user = await User.findOne({ email : session.user.email})
   return (
-    <DashboardPage date={user.createdAt}/>
+    <DashboardPage date={user.createdAt} email={user.email}/>
   )
 }
 
-export default dashboard
+export default dashboard;

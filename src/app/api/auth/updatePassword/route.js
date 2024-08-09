@@ -1,22 +1,18 @@
 import User from "@/models/User";
 import { hashPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
-import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { authOptions } from "../[...nextauth]/route";
 
 export async function mongodb(req) {
   try {
     await connectDB();
 
-    const session = await getServerSession(authOptions);
-
-    const { password } = await req.json();
+    const { password , email } = await req.json();
     
     const hashPass = await hashPassword(password);
 
     await User.findOneAndUpdate(
-      { email: session.user.email },
+      { email: email },
       { password: hashPass }
     );
 

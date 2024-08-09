@@ -5,7 +5,7 @@ import React, { Suspense, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import styles from "./DashboardPage.module.css";
 
-function DashboardPage({ date }) {
+function DashboardPage({ date , email }) {
   const [loading, setLoading] = useState(false);
   const [isDisable, setIsDisable] = useState(true);
   const [newPass, setNewPass] = useState({
@@ -20,7 +20,7 @@ function DashboardPage({ date }) {
           setLoading(true);
           const res = await fetch("/api/auth/updatePassword", {
             method: "POST",
-            body: JSON.stringify({ password }),
+            body: JSON.stringify({ password , email }),
             headers: { "Content-Type": "application/json" },
           });
           const data = await res.json();
