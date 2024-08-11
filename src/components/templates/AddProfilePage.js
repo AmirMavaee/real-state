@@ -12,7 +12,7 @@ import styles from "./AddProfilePage.module.css";
 
 function AddProfilePage({ pageTitle, data }) {
   const router = useRouter();
-  const [profileData, setProfileData] = useState({
+  const dataObject = {
     title: "",
     description: "",
     location: "",
@@ -23,7 +23,10 @@ function AddProfilePage({ pageTitle, data }) {
     category: "",
     rules: [],
     amenities: [],
-  });
+  };
+
+
+  const [profileData, setProfileData] = useState(dataObject);
 
   useEffect(() => {
     if (data) {
@@ -47,6 +50,7 @@ function AddProfilePage({ pageTitle, data }) {
     } else {
       toast.success(data.message);
       router.refresh();
+      setProfileData(dataObject)
     }
   };
 
