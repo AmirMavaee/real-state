@@ -29,7 +29,7 @@ function DashboardCard({ data }) {
     };
     return (
       <div className={styles.container}>
-        <Card data={data} />
+        <Card data={data}/>
         <div className={styles.main}>
           {isDelete ? (
             <Loader />

@@ -1,15 +1,15 @@
 .container {
-    width: 250px;
-    border: 2px solid #304ffe58;
+    border: 2px solid #00B98E58;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
+    text-align: center;
 }
 
 .icon svg {
     font-size: 1.8rem;
-    background-color: #304ffe58;
-    color: #304ffe;
+    background-color: #00B98E58;
+    color: #00B98E;
     padding: 3px;
     border-radius: 5px;
 }
@@ -20,7 +20,6 @@
 }
 
 .location {
-    display: flex;
     color: grey;
     font-size: 0.9rem;
 }
@@ -39,15 +38,19 @@
 }
 
 .container a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-top: 20px;
     font-size: 0.95rem;
     font-weight: 400;
-    color: #304ffe;
+    color: #00B98E;
 }
 
 .container a svg {
     font-size: 1.5rem;
+}
+
+.image img{
+    border-radius: 10px;
+    max-height: 400px !important;
+    width: 100%;
+    height: auto;
 }
