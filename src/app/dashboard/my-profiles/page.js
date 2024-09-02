@@ -19,7 +19,6 @@ async function MyProfiles() {
         }
     }]);
   
-
     return (
        <MyProfilesPage profiles={user.profiles} />
     );

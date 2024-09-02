@@ -12,7 +12,7 @@ function SearchInput({ options, data, onchange, name, type, placeHolder }) {
           className={`${yekanBakh.className} ${styles.input}`}
           name={name}
         >
-          {options.values.map((item) => (
+          {options.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>

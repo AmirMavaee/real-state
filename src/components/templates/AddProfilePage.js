@@ -13,24 +13,30 @@ import styles from "./AddProfilePage.module.css";
 function AddProfilePage({ pageTitle, data }) {
   const router = useRouter();
 
-  const [profileData, setProfileData] = useState({
+  const dataObj = {
     title: "",
     description: "",
     location: "",
     phone: "",
+    province: "",
+    city: "",
     price: "",
     realState: "",
     constructionDate: new Date(),
     category: "",
     rules: [],
     amenities: [],
-  });
+  };
+
+  const [profileData, setProfileData] = useState(dataObj);
 
   useEffect(() => {
     if (data) {
       setProfileData(data);
     }
   }, []);
+
+  console.log(profileData);
 
   const [loading, setLoading] = useState();
 
@@ -48,18 +54,7 @@ function AddProfilePage({ pageTitle, data }) {
     } else {
       toast.success(data.message);
       router.refresh();
-      setProfileData({
-        title: "",
-        description: "",
-        location: "",
-        phone: "",
-        price: "",
-        realState: "",
-        constructionDate: new Date(),
-        category: "",
-        rules: [],
-        amenities: [],
-      });
+      setProfileData(dataObj);
     }
   };
 
@@ -107,6 +102,20 @@ function AddProfilePage({ pageTitle, data }) {
         <TextInput
           title="بنگاه"
           name="realState"
+          profileData={profileData}
+          setProfileData={setProfileData}
+        />
+
+        <TextInput
+          title="استان"
+          name="province"
+          profileData={profileData}
+          setProfileData={setProfileData}
+        />
+
+        <TextInput
+          title="شهر"
+          name="city"
           profileData={profileData}
           setProfileData={setProfileData}
         />

@@ -33,6 +33,8 @@ export async function POST(req) {
       description,
       location,
       phone,
+      province ,
+      city ,
       price,
       realState,
       constructionDate,
@@ -68,6 +70,8 @@ export async function POST(req) {
       !description ||
       !location ||
       !phone ||
+      !province ||
+      !city ||
       !price ||
       !realState ||
       !constructionDate ||
@@ -87,6 +91,8 @@ export async function POST(req) {
       phone,
       price: +price,
       realState,
+      province ,
+      city ,
       constructionDate,
       category,
       rules,
@@ -118,6 +124,8 @@ export async function PATCH(req) {
       location,
       phone,
       price,
+      province ,
+      city ,
       realState,
       constructionDate,
       category,
@@ -154,6 +162,8 @@ export async function PATCH(req) {
       !location ||
       !phone ||
       !price ||
+      !province ||
+      !city || 
       !realState ||
       !constructionDate ||
       !category
@@ -180,6 +190,8 @@ export async function PATCH(req) {
     profile.location = location;
     profile.phone = phone;
     profile.price = price;
+    profile.province = province ;
+    profile.city = city ;
     profile.realState = realState;
     profile.constructionDate = constructionDate;
     profile.category = category;

@@ -50,6 +50,7 @@
 
 .image img{
     border-radius: 10px;
+    max-width: 600px !important;
     max-height: 400px !important;
     width: 100%;
     height: auto;
